@@ -1,0 +1,22 @@
+header {
+	display: flex;
+	.logo {
+		height: auto;
+		width: 30%;
+		background-color: red;
+	}
+	nav {
+		width: 70%;
+		ul {
+			display: flex;
+			justify-content: space-evenly;
+			li {
+				line-height: 40px;
+				list-style: none;
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
