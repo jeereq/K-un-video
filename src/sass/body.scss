@@ -1,2 +1,223 @@
+@font-face {
+	font-family: sega;
+	src: url(../style/font/SEGA.TTF);
+}
 main {
+	section#header {
+		position: relative;
+		height: 100vh;
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: 50% 20%;
+		}
+		.container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+			overflow: hidden;
+			display: flex;
+			&__left {
+				height: 100%;
+				width: 10%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: 50px 0;
+				.top {
+					position: relative;
+					height: 40%;
+					width: 100%;
+					border-right: 1px solid red;
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: -50px;
+						right: 0;
+						height: 5px;
+						width: 5px;
+						border-radius: 50%;
+						background-color: red;
+						transform: translatex(50%);
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: -25px;
+						right: 0;
+						height: 5px;
+						width: 5px;
+						border-radius: 50%;
+						background-color: red;
+						transform: translatex(50%);
+					}
+				}
+				.bottom {
+					position: relative;
+					height: 40%;
+					width: 100%;
+					border-right: 1px solid red;
+					&::after {
+						content: "";
+						position: absolute;
+						top: -50px;
+						right: 0;
+						height: 5px;
+						width: 5px;
+						border-radius: 50%;
+						background-color: red;
+						transform: translatex(50%);
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						top: -25px;
+						right: 0;
+						height: 5px;
+						width: 5px;
+						border-radius: 50%;
+						background-color: red;
+						transform: translatex(50%);
+					}
+				}
+			}
+			&__right {
+				position: relative;
+				height: 100%;
+				width: 90%;
+				.center {
+					padding: 20px;
+					position: absolute;
+					top: 50%;
+					left: 10%;
+					width: 40%;
+					transform: translate(0%, -50%);
+					h2 {
+						font-family: sega;
+						letter-spacing: 2px;
+						font-size: 2.2em;
+						padding: 15px 0px;
+					}
+					.btn {
+						height: auto;
+						width: 100%;
+						.left {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							height: 50px;
+							width: 50px;
+							border: none;
+							border-radius: 50%;
+							background: linear-gradient(100deg, gold, red);
+						}
+					}
+					@media screen and (max-width: 775px) {
+						& {
+							padding: 5px;
+							left: 5%;
+							width: 45%;
+							h2 {
+								font-size: 1.4em;
+							}
+						}
+					}
+				}
+				.right {
+					padding: 20px;
+					position: absolute;
+					top: 40%;
+					right: 5%;
+					width: 30%;
+					h2 {
+						margin-left: 5%;
+						margin-bottom: 10px;
+						padding-bottom: 10px;
+					}
+					.containerCard {
+						overflow: hidden;
+						.card {
+							position: relative;
+							height: 200px;
+							width: 100%;
+							margin-bottom: 10px;
+							img {
+								height: 100%;
+								width: 100%;
+								object-fit: cover;
+							}
+
+							&::after {
+								content: "";
+								position: absolute;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								background: linear-gradient(
+									100deg,
+									transparent,
+									rgba(0, 0, 0, 0.2)
+								);
+							}
+						}
+					}
+
+					@media screen and (max-width: 775px) {
+						& {
+							padding: 10px;
+							width: 45%;
+							.card {
+								height: 150px;
+							}
+						}
+					}
+					@media screen and (max-width: 500px) {
+						& {
+							.card {
+								height: 100px;
+							}
+						}
+					}
+				}
+				&::after {
+					content: "";
+					padding: 20px;
+					position: absolute;
+					bottom: 0%;
+					right: 5%;
+					width: 30%;
+					height: 30px;
+					background: linear-gradient(transparent, rgba(0, 0, 0, 1) 90%);
+					@media screen and (max-width: 775px) {
+						& {
+							padding: 5px;
+							width: 45%;
+						}
+					}
+				}
+			}
+			@media screen and (max-width: 500px) {
+				&__left {
+					display: none;
+				}
+				&__right {
+					width: 100%;
+				}
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(rgba(3, 3, 36, 0.5), rgba(0, 0, 0, 1));
+		}
+	}
 }
