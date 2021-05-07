@@ -1,0 +1,43 @@
+form {
+	position: relative;
+	height: 100%;
+	input {
+		height: 30px;
+		background-color: transparent;
+		border-radius: 15px;
+		border: 1px solid grey;
+		padding: 5px 10px;
+		width: 100px;
+		transition: 1s;
+		&:focus {
+			outline: none;
+			width: 250px;
+		}
+	}
+	button {
+		position: absolute;
+		top: 1px;
+		height: 29px;
+		right: 1px;
+		border: none;
+		border-left: 0.5px solid rgba(128, 128, 128, 0.473);
+		background-color: transparent;
+		padding: 5px 10px;
+	}
+	@media screen and (max-width: 500px) {
+		input {
+			width: 40px;
+			transition: 1s;
+			&::placeholder {
+				color: transparent;
+			}
+			&:focus {
+				width: 100px;
+			}
+		}
+		button {
+			border-left: none;
+			z-index: -1;
+		}
+	}
+}

@@ -1,20 +1,62 @@
 header {
-	display: flex;
-	.logo {
-		height: auto;
-		width: 30%;
-		background-color: red;
+	position: fixed;
+	top: 0;
+	left: 15%;
+	width: 70%;
+	.top {
+		height: 30px;
+		padding: 5px;
+		display: flex;
+		justify-content: space-between;
+		.logo {
+			line-height: 20px;
+			padding: 0 15px;
+			color: gold;
+			letter-spacing: 5px;
+			&::first-letter {
+				font-size: 2em;
+			}
+			span {
+				display: inline-block;
+				color: red;
+				transform: translate(-44.5%, 45%);
+			}
+			span::first-letter {
+				font-size: 2em;
+			}
+		}
 	}
-	nav {
-		width: 70%;
-		ul {
-			display: flex;
-			justify-content: space-evenly;
-			li {
-				line-height: 40px;
-				list-style: none;
-				a {
-					text-decoration: none;
+	.bottom {
+		padding: 5px;
+		nav {
+			width: 50%;
+			margin-left: 50%;
+			ul {
+				display: flex;
+				justify-content: space-between;
+				li {
+					line-height: 40px;
+					list-style: none;
+					a {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 800px) {
+		& {
+			width: 80%;
+			left: 10%;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		& {
+			width: 100%;
+			left: 0%;
+			.top {
+				.logo {
+					width: 250px;
 				}
 			}
 		}
