@@ -39,11 +39,11 @@ export default function SectionHeader() {
 									infiniteLoop
 									onClickItem={click}
 								>
-									{data.map((element, index) => {
+									{data.map(({ name }, index) => {
 										let active = "";
 										if (index === 0) active = "active";
 										return (
-											<Card key={index} name={element} styled={active}></Card>
+											<Card key={index} name={name} styled={active}></Card>
 										);
 									})}
 								</Carousel>

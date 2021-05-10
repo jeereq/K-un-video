@@ -89,6 +89,7 @@ main {
 				position: relative;
 				height: 100%;
 				width: 90%;
+				font-family: sega;
 				.center {
 					padding: 20px;
 					position: absolute;
@@ -134,6 +135,8 @@ main {
 					right: 5%;
 					width: 30%;
 					h2 {
+						letter-spacing: 2px;
+						font-size: 1em;
 						margin-left: 5%;
 						margin-bottom: 10px;
 						padding-bottom: 10px;
@@ -150,7 +153,11 @@ main {
 								width: 100%;
 								object-fit: cover;
 							}
-
+							.play-circle {
+								position: absolute;
+								bottom: 10px;
+								left: 10px;
+							}
 							&::after {
 								content: "";
 								position: absolute;
@@ -218,6 +225,65 @@ main {
 			right: 0;
 			bottom: 0;
 			background: linear-gradient(rgba(3, 3, 36, 0.5), rgba(0, 0, 0, 1));
+		}
+	}
+	section#news {
+		width: 100%;
+		overflow: hidden;
+		min-height: auto;
+		.parent {
+			position: relative;
+			.btn {
+				z-index: 1;
+				&.left {
+					position: absolute;
+					left: 20px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				&.right {
+					position: absolute;
+					right: 20px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			.container {
+				display: flex;
+				width: max-content;
+				padding: 20px;
+			}
+		}
+	}
+	section#all,
+	section#film {
+		height: auto;
+		.parent {
+			height: auto;
+			.container {
+				display: flex;
+				justify-content: space-evenly;
+				flex-wrap: wrap;
+				width: 80%;
+				margin: auto;
+				padding: 20px;
+
+				@media screen and (max-width: 850px) {
+					& {
+						width: 90%;
+					}
+				}
+				@media screen and (max-width: 775px) {
+					& {
+						width: 95%;
+					}
+				}
+				@media screen and (max-width: 650px) {
+					& {
+						width: 100%;
+					}
+				}
+			}
 		}
 	}
 }
