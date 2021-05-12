@@ -14,11 +14,15 @@ export default function MiniHeader({ name, dataCat }) {
 						</div>
 						{name}
 					</div>
-					<Search></Search>
+					{name !== "news" ? <Search name={name}></Search> : ""}
 				</div>
-				<div className="bottom">
-					<AllCategorie data={dataCat} section={name}></AllCategorie>
-				</div>
+				{name !== "news" ? (
+					<div className="bottom">
+						<AllCategorie data={dataCat} section={name}></AllCategorie>
+					</div>
+				) : (
+					""
+				)}
 			</div>
 		</>
 	);

@@ -5,8 +5,10 @@ import Card from "../cards/CardHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { Carousel } from "react-responsive-carousel";
+
 export default function SectionHeader() {
 	useEffect(() => {}, []);
+
 	const click = (keys) => {
 		console.log(keys);
 	};

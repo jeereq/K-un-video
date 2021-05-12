@@ -4,10 +4,15 @@ import Movie from "./pages/movie";
 import Serie from "./pages/serie";
 import { Switch, Route } from "react-router-dom";
 import "./sass/index.scss";
+
 function App() {
+	const Croix = (setKeysId, setVueUnique) => {
+		setKeysId(null);
+		setVueUnique(false);
+	};
 	return (
 		<div className="App">
-			<Header></Header>
+			<Header Croix={Croix}></Header>
 			<Switch>
 				<Route path="/serie">
 					<Serie></Serie>

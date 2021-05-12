@@ -1,6 +1,5 @@
 import { Data } from "../data/dataHeader";
 import { Link } from "react-router-dom";
-import Search from "./Search";
 export default function Header() {
 	return (
 		<>
@@ -9,7 +8,6 @@ export default function Header() {
 					<div className="logo">
 						Gold <span>Vision</span>
 					</div>
-					<Search></Search>
 				</div>
 				<div className="bottom">
 					<nav>

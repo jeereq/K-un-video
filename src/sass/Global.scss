@@ -2,6 +2,12 @@
 	font-family: sega;
 	src: url(../style/font/SEGA.TTF);
 }
+
+html,
+body {
+	transition: 1s;
+	scroll-behavior: smooth;
+}
 form {
 	position: relative;
 	height: 100%;
@@ -178,6 +184,47 @@ form {
 					height: 150px;
 				}
 			}
+		}
+	}
+}
+
+.more {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	padding-bottom: 50px;
+	font-family: sega;
+	text-align: right;
+	.item {
+		position: relative;
+		padding: 15px;
+		margin: 0 15px;
+		font-size: 0.75em;
+		opacity: 0.5;
+		span {
+			font-size: 0.75em;
+		}
+		&.prev,
+		&.next {
+			font-size: 1.25em;
+			opacity: 0.75;
+		}
+		&.current {
+			font-size: 1.75em;
+			opacity: 1;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			z-index: -1;
+			height: 100%;
+			width: 100%;
+			filter: blur(40px);
+			background-color: black;
 		}
 	}
 }

@@ -1,33 +1,35 @@
 import MiniHeader from "../MiniHeader";
 import React, { useContext, useEffect, useState } from "react";
-import { data } from "../../data/dataSectionHeader";
 import Card from "../cards/Card";
 import { ContexteGeneral } from "../../pages/Home";
+import { filterSerie } from "../../pages/Home";
+import More from "../More";
 
 export const Contexte = React.createContext();
 
-export default function SectionGeneral() {
-	const [Cards, setCards] = useState(data);
-	const [name, setName] = useState("serie");
+export default function SectionGeneral({ cardsSerieSearch }) {
+	const [Cards, setCards] = useState(cardsSerieSearch);
+	const [name] = useState("serie");
 	const { dataGeneralCat, setDataGeneralCat } = useContext(ContexteGeneral);
+	const [first, setFirst] = useState(1);
+	const [prevent, setPrevent] = useState(1);
+	const [current, setCurrent] = useState(1);
+	const [next, setNext] = useState(2);
+	const [last, setLast] = useState(1000);
+
+	useEffect(() => {
+		setCards(cardsSerieSearch);
+	}, [cardsSerieSearch]);
 
 	useEffect(() => {
 		fetch(
 			"https://api.themoviedb.org/3/trending/tv/week?api_key=23e640cfc012242a230d71adac41e090"
 		)
 			.then((res) => res.json())
-			.then((data1) => {
-				let newCards = data1.results.map((element) => ({
-					id: element.id,
-					name: element.poster_path,
-					title: element.name,
-					date: element.first_air_date,
-					popular: element.vote_average
-				}));
+			.then((data) => {
+				let newCards = filterSerie(data);
 				setCards(newCards);
 			});
-	}, []);
-	useEffect(() => {
 		fetch(
 			"https://api.themoviedb.org/3/genre/tv/list?api_key=23e640cfc012242a230d71adac41e090&language=fr"
 		)
@@ -69,6 +71,22 @@ export default function SectionGeneral() {
 									);
 								}
 							)}
+							<More
+								value={{
+									first,
+									setFirst,
+									next,
+									setNext,
+									prevent,
+									setPrevent,
+									current,
+									setCurrent,
+									last,
+									setLast,
+									setCards,
+									name
+								}}
+							></More>
 						</div>
 					</div>
 				</section>

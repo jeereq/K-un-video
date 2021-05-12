@@ -1,11 +1,12 @@
 import MiniHeader from "../MiniHeader";
 import React, { useContext, useState, useEffect } from "react";
-import { data } from "../../data/dataSectionHeader";
 import Card from "../cards/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { ContexteGeneral } from "../../pages/Home";
+import { filterSerie } from "../../pages/Home";
+import More from "../More";
 
 export const Contexte = React.createContext();
 
@@ -13,7 +14,12 @@ export default function SectionNews() {
 	const [Cards, setCards] = useState([]);
 	const [ourCompteur, setOurCompteur] = useState(0);
 	const { dataNewsCat, setDataNewsCat } = useContext(ContexteGeneral);
-	const [name, setName] = useState("news");
+	const [name] = useState("news");
+	const [first, setFirst] = useState(1);
+	const [prevent, setPrevent] = useState(1);
+	const [current, setCurrent] = useState(1);
+	const [next, setNext] = useState(2);
+	const [last, setLast] = useState(1000);
 
 	useEffect(() => {
 		fetch(
@@ -21,40 +27,9 @@ export default function SectionNews() {
 		)
 			.then((res) => res.json())
 			.then((data1) => {
-				let newCards = data1.results.map(
-					({
-						id,
-						poster_path,
-						title,
-						name,
-						release_date,
-						vote_average,
-						first_air_date
-					}) => {
-						let named = "";
-						let dated = "";
-						if (title !== undefined) {
-							named = title;
-							dated = release_date;
-						} else if (named !== undefined) {
-							named = name;
-							dated = first_air_date;
-						}
-						return {
-							id,
-							name: poster_path,
-							transform: 0,
-							title: named,
-							date: dated,
-							popular: vote_average
-						};
-					}
-				);
+				let newCards = filterSerie(data1);
 				setCards(newCards);
 			});
-	}, []);
-
-	useEffect(() => {
 		fetch(
 			"https://api.themoviedb.org/3/genre/movie/list?api_key=23e640cfc012242a230d71adac41e090&language=fr"
 		)
@@ -84,9 +59,18 @@ export default function SectionNews() {
 		if (current.classList.contains("left")) {
 			if (ourCompteur > 0) {
 				setOurCompteur((ourCompteur) => ourCompteur - 1);
-				let Array = Cards.map(({ name, transform, title, date, popular }) => {
-					return { name, transform: transform - 1, title, date, popular };
-				});
+				let Array = Cards.map(
+					({ name, transform, title, date, popular, nature }) => {
+						return {
+							name,
+							transform: transform - 1,
+							title,
+							date,
+							popular,
+							nature
+						};
+					}
+				);
 				setCards(Array);
 			}
 		}
@@ -94,9 +78,18 @@ export default function SectionNews() {
 		if (current.classList.contains("right")) {
 			if (ourCompteur < length && ourCompteur * 200 < total) {
 				setOurCompteur((ourCompteur) => ourCompteur + 1);
-				let Array = Cards.map(({ name, transform, title, date, popular }) => {
-					return { name, transform: transform + 1, title, date, popular };
-				});
+				let Array = Cards.map(
+					({ name, transform, title, date, popular, nature }) => {
+						return {
+							name,
+							transform: transform + 1,
+							title,
+							date,
+							popular,
+							nature
+						};
+					}
+				);
 				setCards(Array);
 			}
 		}
@@ -127,7 +120,10 @@ export default function SectionNews() {
 						</div>
 						<div className="container">
 							{Cards.map(
-								({ id, name, transform, title, date, popular }, index) => {
+								(
+									{ id, name, transform, title, date, popular, nature },
+									index
+								) => {
 									return (
 										<Card
 											id={id}
@@ -137,12 +133,29 @@ export default function SectionNews() {
 											title={title}
 											date={date}
 											popular={popular}
+											nature={nature}
 										></Card>
 									);
 								}
 							)}
 						</div>
 					</div>
+					<More
+						value={{
+							first,
+							setFirst,
+							next,
+							setNext,
+							prevent,
+							setPrevent,
+							current,
+							setCurrent,
+							last,
+							setLast,
+							name,
+							setCards
+						}}
+					></More>
 				</section>
 			</Contexte.Provider>
 		</>

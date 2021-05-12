@@ -1,6 +1,4 @@
 import Categorie from "./Categorie";
-import { useContext, useState } from "react";
-import { ContexteGeneral } from "../pages/Home";
 
 export default function AllCategorie({ data, section }) {
 	return (
