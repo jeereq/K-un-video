@@ -1,0 +1,207 @@
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: 1s;
+}
+
+body {
+	font-size: 0.9em;
+	font-variant: small-caps;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+	width: 100%;
+}
+header .header {
+	position: relative;
+	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	height: 30px;
+	background: black;
+	padding: 2px;
+}
+.header .text {
+	position: relative;
+	width: 50%;
+	overflow: hidden;
+	border-right: 1px solid rgba(128, 128, 128, 0.501);
+}
+.date {
+	color: gray;
+	padding: 5px 2px;
+}
+.header .reseaux {
+	padding: 0px 5px;
+	display: flex;
+	align-items: center;
+}
+.reseaux .rSocial {
+	height: 20px;
+	width: 20px;
+	margin: 0 10px;
+	background: gray;
+}
+.text::after {
+	content: "";
+	height: 100%;
+	width: 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: black;
+}
+.text p {
+	color: gray;
+	height: 100%;
+	width: max-content;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	padding: 5px 2px;
+}
+header .container {
+	width: 90%;
+	margin: auto;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.container.padding {
+	opacity: 0;
+	height: 0;
+}
+.container .pub {
+	height: 90%;
+	width: 60%;
+	background-color: darkblue;
+}
+.container .logo {
+	width: 100px;
+	height: 60%;
+}
+.logo img {
+	height: 100%;
+	width: 100%;
+}
+header nav {
+	position: relative;
+	z-index: 5;
+	width: 90%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: white;
+	transition-delay: 0.75s;
+}
+nav.padding {
+	position: fixed;
+	padding: 0 5%;
+	width: 100%;
+}
+nav ul {
+	display: flex;
+	justify-content: space-evenly;
+	width: calc(100% - 30%);
+}
+ul li.item {
+	list-style: none;
+}
+li.item a {
+	position: relative;
+	display: block;
+	color: black;
+	text-decoration: none;
+	padding: 0 10px;
+}
+.item a .arrow {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	height: 5px;
+	width: 5px;
+	transform: translate(50%, -50%);
+}
+li.item a:hover,
+li.item a.active {
+	color: green;
+}
+a .actu {
+	background: black;
+}
+a.active .arrow,
+a:hover .arrow.actu {
+	background: green;
+}
+
+nav .menus {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	padding: 2.5px 0;
+}
+.menus .bar {
+	height: 3px;
+	width: 80%;
+	border-radius: 2px;
+	background-color: green;
+}
+nav form {
+	position: relative;
+	width: 20px;
+}
+form input {
+	width: 100%;
+	border: none;
+}
+form:hover input {
+	width: 150px;
+	transform: translateX(-50%);
+	border: 1px solid green;
+}
+form label {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+form:hover .boule {
+	border: none;
+}
+.boule {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	border: 1px solid green;
+}
+
+.hover {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+	background: rgba(5, 2, 2, 0.75);
+	opacity: 0;
+}
+.hover.visible {
+	opacity: 1;
+	padding-top: 100px;
+}
+
+.hover.visible .red {
+	color: red;
+	padding: 10px;
+	background: white;
+	margin: 5px;
+}
+main {
+	height: 100vh;
+	background: gray;
+}
