@@ -1,0 +1,165 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+.vueMovie {
+	position: relative;
+	min-height: max-content;
+	width: 90%;
+	overflow: hidden;
+	margin: auto;
+	padding-top: 160px;
+	header {
+		position: relative;
+		z-index: 2;
+		padding: 10px 0;
+		color: white;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		h1 {
+			.logo {
+				position: relative;
+				display: inline-block;
+				padding: 5px;
+				margin-right: 10px;
+				color: $defaultColor;
+				border: 5px solid $defaultColor;
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					left: 100%;
+					width: 5px;
+					height: 50%;
+					transform: translateY(-50%);
+					background: $backgroundColor;
+				}
+			}
+		}
+	}
+	.parentList {
+		width: 100%;
+		overflow-x: scroll;
+		&::before {
+			position: absolute;
+			z-index: 1;
+			content: "";
+			top: 20%;
+			bottom: 0%;
+			width: 10%;
+			background: linear-gradient(90deg, $backgroundColor, transparent);
+		}
+		&::after {
+			position: absolute;
+			z-index: 1;
+			content: "";
+			top: 20%;
+			right: 0%;
+			bottom: 0%;
+			width: 10%;
+			background: linear-gradient(90deg, transparent, $backgroundColor);
+		}
+		.listCard {
+			height: 275px;
+			width: max-content;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+	}
+	.pagination {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		padding: 10px 0;
+		.rightArrow,
+		.leftArrow {
+			display: block;
+			padding: 5px;
+			margin-right: 15px;
+			color: white;
+			&:hover {
+				color: $defaultColor;
+			}
+		}
+	}
+}
+.vueTv {
+	position: relative;
+	min-height: max-content;
+	width: 90%;
+	overflow: hidden;
+	margin: auto;
+	padding-top: 0px;
+	header {
+		position: relative;
+		z-index: 2;
+		padding: 10px 0;
+		color: white;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		h1 {
+			.logo {
+				position: relative;
+				display: inline-block;
+				padding: 5px;
+				margin-right: 10px;
+				color: $defaultColor;
+				border: 5px solid $defaultColor;
+				&::after {
+					position: absolute;
+					content: "";
+					top: 50%;
+					left: 100%;
+					width: 5px;
+					height: 50%;
+					transform: translateY(-50%);
+					background: $backgroundColor;
+				}
+			}
+		}
+	}
+	.parentList {
+		width: 100%;
+		overflow-x: scroll;
+		&::before {
+			position: absolute;
+			z-index: 1;
+			content: "";
+			top: 20%;
+			bottom: 0%;
+			width: 10%;
+			background: linear-gradient(90deg, $backgroundColor, transparent);
+		}
+		&::after {
+			position: absolute;
+			z-index: 1;
+			content: "";
+			top: 20%;
+			right: 0%;
+			bottom: 0%;
+			width: 10%;
+			background: linear-gradient(90deg, transparent, $backgroundColor);
+		}
+		.listCard {
+			height: 275px;
+			width: max-content;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+	}
+	.pagination {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		padding: 10px 0;
+		.rightArrow,
+		.leftArrow {
+			display: block;
+			padding: 5px;
+			margin-right: 15px;
+			color: white;
+			&:hover {
+				color: $defaultColor;
+			}
+		}
+	}
+}

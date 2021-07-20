@@ -1,0 +1,31 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+
+*,
+::after,
+::before,
+::placeholder {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-variant: small-caps;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-variant: small-caps;
+	background-color: $backgroundColor;
+}
+a.active,
+a:hover {
+	color: $defaultColor;
+	border-bottom: 2px solid $defaultColor;
+	transition: 1s;
+}
+.Home {
+	height: 100vh;
+}

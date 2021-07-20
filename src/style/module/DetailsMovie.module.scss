@@ -1,0 +1,32 @@
+.DetailsMovie {
+	height: max-content;
+	width: 100%;
+	.container {
+		height: 500px;
+		width: calc(90%);
+		padding-left: 40vh;
+		margin: auto;
+		@media screen and(max-width:600px) {
+			padding-left: 0;
+			margin-top: 37.5vh;
+		}
+	}
+}
+.DetailsTv {
+	height: max-content;
+	width: 100%;
+	.container {
+		height: 500px;
+		width: calc(90%);
+		padding-left: 40vh;
+		margin: auto;
+		.data {
+			height: 100%;
+			background: red;
+		}
+		@media screen and(max-width:600px) {
+			padding-left: 0;
+			margin-top: 37.5vh;
+		}
+	}
+}

@@ -1,0 +1,122 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+.Header {
+	position: fixed;
+	top: 0;
+	z-index: 5;
+	height: 100px;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+	background: linear-gradient(90deg, #19181e7f, #19181e1a);
+	.top {
+		height: 75px;
+		width: 90%;
+		padding: 10px;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media screen and (max-width: 500px) {
+			width: 95%;
+		}
+		.logo {
+			position: relative;
+			height: 60px;
+			width: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 5px solid $defaultColor;
+			color: $defaultColor;
+			font-weight: 900;
+			font-size: 1.2em;
+			.productBy {
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				width: max-content;
+				border-left: 5px solid #19181e;
+				padding: 5px;
+				padding-left: 10px;
+				color: $defaultTextColor;
+				font-weight: 300;
+				font-size: 0.7em;
+				transform: translateY(-50%);
+				span {
+					display: inline-block;
+					height: 15px;
+					margin: 0 10px;
+					width: 1px;
+					background-color: $defaultColor;
+				}
+				@media screen and (max-width: 500px) {
+					font-size: 0.65em;
+					padding: 2.5px;
+					span {
+						margin: 0 5px;
+					}
+				}
+			}
+		}
+		form {
+			height: 25px;
+			input {
+				height: 100%;
+				background-color: transparent;
+				border: 2px solid $defaultColor;
+				border-bottom-left-radius: 5px;
+				border-top-left-radius: 5px;
+				color: white;
+				padding-left: 5px;
+				width: 75px;
+				transition: 1s;
+				&::placeholder {
+					color: $defaultTextColor;
+					padding-left: 10px;
+				}
+				&:focus {
+					width: 150px;
+					outline: none;
+					border: 2px solid white;
+				}
+			}
+			button {
+				background-color: $defaultColor;
+				border: none;
+				border-bottom-right-radius: 5px;
+				border-top-right-radius: 5px;
+				height: 100%;
+				width: max-content;
+				padding: 0 5px;
+				margin-left: 2.5px;
+				color: white;
+				font-weight: 900;
+			}
+		}
+	}
+	.nav {
+		height: 25px;
+		width: 90%;
+		margin: auto;
+		ul {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 70%;
+			margin: auto;
+			li {
+				list-style: none;
+				font-size: 0.7em;
+				a {
+					display: block;
+					height: 25px;
+					text-decoration: none;
+					color: white;
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+}

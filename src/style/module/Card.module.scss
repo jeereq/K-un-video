@@ -1,0 +1,92 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+
+.link:hover {
+	text-decoration: none;
+	border-bottom: none;
+}
+.cardMovie {
+	position: relative;
+	height: 250px;
+	width: 200px;
+	margin: 0 10px;
+	overflow: hidden;
+	background: url(../../movies/mando.jpg);
+	background-size: cover;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0%;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		transition: 1s;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&:hover::after {
+		background: transparent;
+	}
+	&:hover .text {
+		top: 30%;
+	}
+	.text {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height: 70%;
+		padding: 10px;
+		background: $backgroundColorTransparent;
+		color: $defaultTextColor;
+		transition: 1s;
+		overflow: hidden;
+		font-size: 0.7em;
+		h2 {
+			padding: 2.5px 0;
+			border-bottom: 1px solid $defaultColor;
+		}
+	}
+}
+
+.cardTv {
+	position: relative;
+	height: 250px;
+	width: 200px;
+	margin: 0 10px;
+	overflow: hidden;
+	background: url(../../movies/matrix.jpg);
+	background-size: cover;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0%;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		transition: 1s;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	&:hover::after {
+		background: transparent;
+	}
+	&:hover .text {
+		top: 30%;
+	}
+	.text {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height: 70%;
+		padding: 10px;
+		background: $backgroundColorTransparent;
+		color: $defaultTextColor;
+		transition: 1s;
+		font-size: 0.7em;
+		h2 {
+			padding: 2.5px 0;
+			border-bottom: 1px solid $defaultColor;
+		}
+	}
+}

@@ -1,0 +1,95 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+.Contact {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 120px 0;
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: max-content;
+		width: 80%;
+		background: linear-gradient(
+			120deg,
+			transparent 10%,
+			$defaultColor 50%,
+			$defaultTextColor 50%,
+			transparent 90%
+		);
+		padding: 20px 0;
+		form {
+			position: relative;
+			height: 90%;
+			width: 90%;
+			padding: 100px 0;
+			padding-right: 20px;
+			background-color: $backgroundColor;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			.left {
+				width: 40%;
+			}
+			.right {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				align-items: center;
+				width: 60%;
+				input {
+					width: 45%;
+					height: 30px;
+					margin: 10px 0;
+					outline: none;
+					color: white;
+					background: transparent;
+					border: none;
+					border-bottom: 1px solid $defaultTextColor;
+					transition: 1s;
+					&:hover {
+						border-bottom: 1px solid $defaultColor;
+					}
+				}
+				textarea {
+					height: 100px;
+					width: 100%;
+					margin: 10px 0;
+					outline: none;
+					color: white;
+					background: transparent;
+					border: none;
+					border-bottom: 1px solid $defaultTextColor;
+					transition: 1s;
+					&:hover {
+						border-bottom: 1px solid $defaultColor;
+					}
+				}
+
+				button {
+					background: transparent;
+					border: none;
+					border-bottom: 1px solid $defaultTextColor;
+					margin: 10px 0;
+					padding: 10px 5px;
+					padding-left: 0;
+					color: white;
+				}
+			}
+			@media screen and(max-width:600px) {
+				padding: 50px 0;
+				.left,
+				.right {
+					width: 100%;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+		}
+	}
+}

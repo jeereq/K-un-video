@@ -1,0 +1,85 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+.banniere {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background-image: url("../../movies/coco.jpg");
+	background-size: cover;
+	&::before {
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		content: "";
+		background: linear-gradient(90deg, #19181e 7.5%, #19181e2e);
+	}
+	.middle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+		color: white;
+		h1 {
+			margin-bottom: 50px;
+		}
+		.btn {
+			width: max-content;
+			margin: auto;
+			padding: 15px 25px;
+			border-radius: 30px;
+			background: $defaultColor;
+			box-shadow: 0 0 15px $defaultColor;
+		}
+		.baton {
+			height: 30px;
+			width: 15px;
+			margin: auto;
+			transform: translateY(-2px);
+			background: $defaultColor;
+			box-shadow: 0 0 15px $defaultColor;
+			border-radius: 40% / 40%;
+		}
+		.boule {
+			height: 30px;
+			width: 30px;
+			margin: auto;
+			transform: translateY(-5px);
+			border-radius: 50%;
+			background: $defaultColor;
+			box-shadow: 0 0 15px $defaultColor;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: 1s;
+			&:hover {
+				border: 1px solid white;
+				color: $backgroundColor;
+				transform: translateY(-5px) scale(1.2);
+			}
+		}
+	}
+	.banniereBotom {
+		position: absolute;
+		bottom: 0;
+		z-index: 2;
+		left: 5%;
+		height: 200px;
+		width: 90%;
+		transform: translateY(75%);
+		border-radius: 75px;
+		box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.1);
+		background: $backgroundColor;
+	}
+}
+
+.link {
+	color: inherit;
+	text-decoration: none;
+}
+.link:hover {
+	color: inherit;
+}

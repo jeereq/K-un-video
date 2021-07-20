@@ -1,0 +1,97 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+footer {
+	min-height: 250px;
+	background: $defaultColor;
+	.container {
+		height: max-content;
+		width: 90%;
+		padding-top: 50px;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.logo {
+			position: relative;
+			height: 100px;
+			width: 100px;
+			margin-right: 170px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 5px solid $backgroundColor;
+			color: $backgroundColor;
+			font-weight: 900;
+			font-size: 1.75em;
+			.productBy {
+				position: absolute;
+				top: 50%;
+				left: 100%;
+				width: max-content;
+				border-left: 5px solid $defaultColor;
+				padding: 5px;
+				padding-left: 10px;
+				color: $defaultTextColor;
+				font-weight: 300;
+				font-size: 0.7em;
+				transform: translateY(-50%);
+				span {
+					display: inline-block;
+					height: 15px;
+					margin: 0 10px;
+					width: 1px;
+					background-color: $backgroundColor;
+				}
+				@media screen and (max-width: 500px) {
+					font-size: 0.65em;
+					padding: 2.5px;
+					span {
+						margin: 0 5px;
+					}
+				}
+			}
+		}
+		.explication {
+			width: 50%;
+			padding: 10px;
+			color: $defaultTextColor;
+			border-left: 1px solid $darkDefault;
+			border-right: 1px solid $darkDefault;
+			.reseauxSociaux {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+				color: $darkDefault;
+				width: 30%;
+			}
+		}
+		@media screen and (max-width: 650px) {
+			justify-content: left;
+			.explication {
+				margin-top: 20px;
+				width: 100%;
+				border-left: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-bottom: 1px solid $darkDefault;
+				border-top: 1px solid $darkDefault;
+				.reseauxSociaux {
+					width: 50%;
+				}
+			}
+		}
+	}
+	.footer {
+		padding: 20px 0;
+		width: 100%;
+		margin-top: 50px;
+		color: white;
+		font-size: 0.7em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $backgroundColor;
+	}
+}

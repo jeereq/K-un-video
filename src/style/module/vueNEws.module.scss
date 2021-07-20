@@ -1,0 +1,84 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+.vueNews {
+	height: 100vh;
+	width: 90%;
+	margin: auto;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	.top,
+	.bottom {
+		height: 32%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		.left {
+			position: relative;
+			height: 100%;
+			width: 63%;
+			background-image: url(../../movies//mi.jpg);
+			background-size: cover;
+			&::after {
+				position: absolute;
+				top: 0;
+				z-index: 1;
+				content: "";
+				height: 100%;
+				width: 100%;
+				background: $backgroundColorTransparent;
+			}
+			&:hover::after {
+				background: transparent;
+			}
+		}
+		.right {
+			position: relative;
+			height: 100%;
+			width: 35%;
+			background-image: url(../../movies/narcos.jpg);
+			background-size: cover;
+			&::after {
+				position: absolute;
+				top: 0;
+				z-index: 1;
+				content: "";
+				height: 100%;
+				width: 100%;
+				background: $backgroundColorTransparent;
+			}
+			&:hover::after {
+				background: transparent;
+			}
+		}
+	}
+	.middle {
+		height: 30%;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		.center {
+			position: relative;
+			height: 100%;
+			width: 32%;
+			background-image: url(../../movies/lucifer-season-5-poster-1.jpg);
+			background-size: cover;
+			&::after {
+				position: absolute;
+				top: 0;
+				z-index: 1;
+				content: "";
+				height: 100%;
+				width: 100%;
+				background: $backgroundColorTransparent;
+			}
+			&:hover::after {
+				background: transparent;
+			}
+		}
+	}
+}

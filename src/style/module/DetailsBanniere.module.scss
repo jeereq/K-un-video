@@ -1,0 +1,59 @@
+.DetailsBanniereTv {
+	position: relative;
+	height: 50vh;
+	width: 100%;
+	background: url(../../movies/falcon.jpg);
+	background-size: cover;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.45);
+	}
+	.leftImage {
+		position: absolute;
+		top: 100%;
+		left: 5%;
+		z-index: 1;
+		transform: translateY(-40%);
+		height: 120%;
+		width: 40vh;
+		background: url(../../movies/falcon.jpg);
+		background-size: cover;
+		@media screen and(max-width:600px) {
+			width: 90%;
+		}
+	}
+}
+
+.DetailsBanniereMovie {
+	position: relative;
+	height: 50vh;
+	width: 100%;
+	background: url(../../movies/fantastic-beasts-the-crimes-of-grindelwald-movie-poster-1000778620.jpg);
+	background-size: cover;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.45);
+	}
+	.leftImage {
+		position: absolute;
+		top: 100%;
+		left: 5%;
+		z-index: 1;
+		transform: translateY(-40%);
+		height: 120%;
+		width: 40vh;
+		background: url(../../movies/fantastic-beasts-the-crimes-of-grindelwald-movie-poster-1000778620.jpg);
+		background-size: cover;
+		@media screen and(max-width:600px) {
+			width: 90%;
+		}
+	}
+}
