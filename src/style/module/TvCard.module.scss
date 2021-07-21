@@ -1,0 +1,15 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+.link:hover {
+	text-decoration: none;
+	border-bottom: none;
+}
+.TvCard {
+	height: 22vw;
+	width: 22vw;
+	background: rgb(255, 123, 0);
+	border: 1px solid $backgroundColor;
+}

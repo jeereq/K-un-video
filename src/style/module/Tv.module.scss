@@ -1,0 +1,51 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ea7;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+.container {
+	min-height: 100vh;
+	padding: 100px 0;
+	color: $defaultTextColor;
+	.listCategorie {
+		display: flex;
+		justify-content: left;
+		flex-wrap: wrap;
+		width: 90%;
+		margin: auto;
+		padding-top: 15px;
+		font-size: 0.8em;
+		.categorieActive {
+			position: relative;
+			padding: 5px 7.5px;
+			background: $defaultColor;
+			color: $backgroundColor;
+			margin-right: 5px;
+			margin-bottom: 10px;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				height: 10px;
+				width: 10px;
+				transform: translate(-50%, 50%) rotate(45deg);
+				background: $defaultColor;
+			}
+		}
+		.categorie {
+			padding: 5px 10px;
+			border: 1px solid $defaultColor;
+			margin-right: 5px;
+			margin-bottom: 10px;
+		}
+	}
+	.listCards {
+		display: flex;
+		justify-content: left;
+		flex-wrap: wrap;
+		width: 90%;
+		margin: auto;
+		margin-top: 15px;
+	}
+}

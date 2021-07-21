@@ -4,7 +4,7 @@ $backgroundColor: #19181e;
 $backgroundColorTransparent: #19181ea7;
 $defaultTextColor: rgba(255, 255, 255, 0.5);
 .Contact {
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -23,6 +23,7 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 			transparent 90%
 		);
 		padding: 20px 0;
+
 		form {
 			position: relative;
 			height: 90%;
@@ -35,6 +36,49 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 			flex-wrap: wrap;
 			.left {
 				width: 40%;
+				.image {
+					position: relative;
+					height: 200px;
+					width: 200px;
+					transform: translate(-60px, -60px);
+					img {
+						height: 100%;
+						width: 100%;
+						box-shadow: 0 0 10px $backgroundColor;
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						height: 100%;
+						width: 100%;
+						background: $backgroundColorTransparent;
+					}
+					&::before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: -1;
+						height: 100%;
+						width: 100%;
+						transform: scale(1.1);
+						background: linear-gradient(
+							120deg,
+							transparent 15%,
+							$defaultColor 50%,
+							$defaultTextColor 50%,
+							transparent 85%
+						);
+					}
+				}
+				h1 {
+					padding-left: 10px;
+					color: white;
+					transform: translatey(-50%);
+				}
 			}
 			.right {
 				display: flex;
@@ -52,8 +96,13 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 					border: none;
 					border-bottom: 1px solid $defaultTextColor;
 					transition: 1s;
-					&:hover {
+					&:hover,
+					&:focus {
 						border-bottom: 1px solid $defaultColor;
+					}
+
+					&:focus::placeholder {
+						color: white;
 					}
 				}
 				textarea {
@@ -66,8 +115,13 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 					border: none;
 					border-bottom: 1px solid $defaultTextColor;
 					transition: 1s;
-					&:hover {
+					&:hover,
+					&:focus {
 						border-bottom: 1px solid $defaultColor;
+					}
+
+					&:focus::placeholder {
+						color: white;
 					}
 				}
 
@@ -79,6 +133,7 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 					padding: 10px 5px;
 					padding-left: 0;
 					color: white;
+					font-size: 0.9em;
 				}
 			}
 			@media screen and(max-width:600px) {

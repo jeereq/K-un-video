@@ -1,0 +1,40 @@
+$defaultColor: #cfa55b;
+$darkDefault: #19181e;
+$backgroundColor: #19181e;
+$backgroundColorTransparent: #19181ed8;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+
+.Loader {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	height: 100vh;
+	width: 100%;
+	background-color: $backgroundColorTransparent;
+	transition: 1s;
+	.croix {
+		padding: 10px;
+		float: right;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+	.animation {
+		height: 120%;
+		width: 70%;
+		background: linear-gradient(90deg, $defaultTextColor, $defaultColor);
+		animation-name: leftRight;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+	}
+}
+@keyframes leftRight {
+	0% {
+		transform: translateX(-50%) rotate(35deg);
+	}
+	100% {
+		transform: translateX(150%) rotate(0deg);
+	}
+}
