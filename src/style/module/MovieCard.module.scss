@@ -4,10 +4,32 @@ $backgroundColor: #19181e;
 $backgroundColorTransparent: #19181ea7;
 $defaultTextColor: rgba(255, 255, 255, 0.5);
 .MovieCard {
+	position: relative;
 	height: 22vw;
 	width: 22vw;
 	background: magenta;
 	border: 1px solid $backgroundColor;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		background: $backgroundColorTransparent;
+	}
+	&:hover::after {
+		background: transparent;
+	}
+}
+.link {
+	color: $backgroundColorTransparent;
 }
 .link:hover {
 	text-decoration: none;

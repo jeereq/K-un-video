@@ -1,40 +1,57 @@
 import Loader from "../components/Loader";
 import MovieCard from "./MovieCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useTitle from "../use/useTitle";
+import ListCategorie from "../components/ListCategorie";
 import style from "../style/module/Movie.module.scss";
-const Movie = () => {
-	const [LoaderValue, setLoader] = useState(false);
+import { connect } from "react-redux";
+import { allcategorie, selectedCategorie } from "../store/categorieSelector";
+import { addCategorie } from "../store/categorieAction";
+import { AllMovie } from "../store/MovieSelectors";
+import { addMovie } from "../store/MovieActions";
+const Movie = ({ categorie, selectedCategorie, MovieList, fetchMovie }) => {
+	const [LoaderValue, setLoader] = useState(true);
+	useEffect(() => {
+		fetch(
+			`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_KEY_USER_ID}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
+		)
+			.then((res) => res.json())
+			.then((content) => {
+				setLoader(false);
+				fetchMovie(content.results);
+			})
+			.catch((error) => console.log(error));
+	}, [MovieList, fetchMovie]);
+
 	useTitle("Movie show by k'un");
 	return (
 		<>
 			<div className={style.container}>
-				<div className={style.listCategorie}>
-					<div className={style.categorieActive}>name of cat</div>
-					<div className={style.categorie}>name of cat</div>
-					<div className={style.categorie}>name of cat</div>
-					<div className={style.categorie}>name of cat</div>
-					<div className={style.categorie}>name of cat</div>
-					<div className={style.categorie}>name of cat</div>
-				</div>
-
+				<ListCategorie
+					ListCategorie={categorie}
+					selectedCategorie={selectedCategorie}
+				/>
 				<div className={style.listCards}>
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
-					<MovieCard />
+					{MovieList.map((item, index) => {
+						return <MovieCard key={index} item={item} />;
+					})}
 				</div>
 			</div>
 			{LoaderValue && <Loader setLoader={setLoader} />}
 		</>
 	);
 };
+
+export const MovieStore = connect(
+	(state) => ({
+		selectCategorie: selectedCategorie(state.categorie),
+		categorie: allcategorie(state.categorie),
+		MovieList: AllMovie(state.categorie)
+	}),
+	(dispatch) => ({
+		fetchMovie: (MovieList) => dispatch(addMovie(MovieList)),
+		selectedCategorie: (categorie) => dispatch(addCategorie(categorie))
+	})
+)(Movie);
+
 export default Movie;
