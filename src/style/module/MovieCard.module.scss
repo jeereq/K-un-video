@@ -1,13 +1,13 @@
 $defaultColor: #cfa55b;
 $darkDefault: #19181e;
 $backgroundColor: #19181e;
-$backgroundColorTransparent: #19181ea7;
+$backgroundColorTransparent: #19181e8b;
 $defaultTextColor: rgba(255, 255, 255, 0.5);
 .MovieCard {
 	position: relative;
 	height: 22vw;
 	width: 22vw;
-	background: magenta;
+	background: $defaultTextColor;
 	border: 1px solid $backgroundColor;
 	img {
 		height: 100%;

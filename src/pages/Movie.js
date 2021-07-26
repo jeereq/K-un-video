@@ -21,7 +21,7 @@ const Movie = ({ categorie, selectedCategorie, MovieList, fetchMovie }) => {
 				fetchMovie(content.results);
 			})
 			.catch((error) => console.log(error));
-	}, [MovieList, fetchMovie]);
+	}, [fetchMovie]);
 
 	useTitle("Movie show by k'un");
 	return (

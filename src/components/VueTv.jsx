@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTv } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
-const vueMovie = () => {
+
+const VueMovie = ({ ListNewsTv }) => {
 	return (
 		<>
 			<div className={style.vueTv}>
@@ -18,14 +19,9 @@ const vueMovie = () => {
 				</header>
 				<div className={style.parentList}>
 					<div className={style.listCard}>
-						<CardTv />
-						<CardTv />
-						<CardTv />
-						<CardTv />
-						<CardTv />
-						<CardTv />
-						<CardTv />
-						<CardTv />
+						{ListNewsTv.map((item) => (
+							<CardTv key={item.id} item={item} />
+						))}
 					</div>
 				</div>
 				<div className={style.pagination}>
@@ -41,4 +37,4 @@ const vueMovie = () => {
 	);
 };
 
-export default vueMovie;
+export default VueMovie;

@@ -11,6 +11,7 @@ import DetailsMovie from "./pages/DetailsMovie";
 import DetailsTv from "./pages/DetailsTv";
 import store from "./store";
 import { Provider } from "react-redux";
+import { HomeStore } from "./pages/Home";
 const App = () => {
 	console.log(process.env.REACT_APP_KEY_USER_ID);
 	return (
@@ -18,7 +19,7 @@ const App = () => {
 			<Provider store={store}>
 				<Header />
 				<Switch>
-					<Route exact path="/" component={Home} />
+					<Route exact path="/" component={HomeStore} />
 					<Route exact path="/Movie" component={MovieStore} />
 					<Route exact path="/Tv" component={TvStore} />
 					<Route path="/Contact" component={Contact} />

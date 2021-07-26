@@ -4,13 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
-const VueMovie = () => {
-	useEffect(() => {
-		fetch(
-			`https://api.themoviedb.org/3/movie/{movie_id}?api_key=${process.env.REACT_APP_KEY_USER_ID}&language=en-US`
-		).then((data) => console.log(data));
-	}, []);
+
+const VueMovie = ({ ListNewsMovie }) => {
 	return (
 		<>
 			<div className={style.vueMovie}>
@@ -24,14 +19,9 @@ const VueMovie = () => {
 				</header>
 				<div className={style.parentList}>
 					<div className={style.listCard}>
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
-						<CardMovie />
+						{ListNewsMovie.map((item) => (
+							<CardMovie key={item.id} item={item} />
+						))}
 					</div>
 				</div>
 				<div className={style.pagination}>

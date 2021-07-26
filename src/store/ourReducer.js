@@ -9,7 +9,9 @@ const initialState = {
 	],
 	selectedCategorie: {},
 	MovieList: [],
-	TvList: []
+	TvList: [],
+	newsMovie: [],
+	newsTv: []
 };
 
 export const ourReducer = (state = initialState, action) => {
@@ -43,13 +45,25 @@ export const ourReducer = (state = initialState, action) => {
 				...state,
 				TvList: action.payload
 			};
+		case ADD_NEWS_TV_ACTION:
+			return {
+				...state,
+				newsTv: action.payload
+			};
+		case ADD_NEWS_MOVIE_ACTION:
+			return {
+				...state,
+				newsMovie: action.payload
+			};
 		default:
 			return state;
 	}
 };
 
-export const ADD_CATEGORIE_ACTION = "ADD_CATEGORIE_ACTION";
 export const RESET_CATEGORIE_ACTION = "RESET_CATEGORIE_ACTION";
 export const INITIAL_CATEGORIE_ACTION = "INITIAL_CATEGORIE_ACTION";
-export const ADD_MOVIE_ACTION = "ADD_MOVIE_ACTION";
+export const ADD_CATEGORIE_ACTION = "ADD_CATEGORIE_ACTION";
 export const ADD_TV_ACTION = "ADD_TV_ACTION";
+export const ADD_MOVIE_ACTION = "ADD_MOVIE_ACTION";
+export const ADD_NEWS_TV_ACTION = "ADD_NEWS_TV_ACTION";
+export const ADD_NEWS_MOVIE_ACTION = "ADD_NEWS_MOVIE_ACTION";

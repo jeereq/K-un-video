@@ -1,5 +1,5 @@
 import style from "../style/module/Header.module.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
@@ -18,7 +18,8 @@ const Header = () => {
 					<form
 						action="/Search"
 						onSubmit={(e) => {
-							// e.preventDefault();
+							e.preventDefault();
+							<Redirect to="/search" />;
 						}}
 					>
 						<input type="search" name="q" placeholder="search"></input>

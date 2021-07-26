@@ -18,10 +18,9 @@ const Tv = ({ categorie, selectedCategorie, SerieList, fetchTv }) => {
 			.then((res) => res.json())
 			.then((content) => {
 				setLoader(false);
-				console.log(content);
 				fetchTv(content.results);
 			});
-	}, [SerieList, fetchTv]);
+	}, [fetchTv]);
 
 	useTitle("Tv Show by k'un");
 

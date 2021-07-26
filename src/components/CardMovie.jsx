@@ -1,18 +1,17 @@
 import style from "../style/module/Card.module.scss";
 import { Link } from "react-router-dom";
-const CardMovie = () => {
+const CardMovie = ({ item }) => {
+	console.log(item);
 	return (
 		<>
-			<Link to="/Movie/1" className={style.link}>
+			<Link to={`/Movie/${item.id}`} className={style.link}>
 				<div className={style.cardMovie}>
+					<img
+						src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`}
+						alt={item.title}
+					/>
 					<div className={style.text}>
-						<h2>title name</h2>
-						<p>
-							lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-							lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-							lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-							lorem
-						</p>
+						<h2>{item.title}</h2>
 					</div>
 				</div>
 			</Link>
