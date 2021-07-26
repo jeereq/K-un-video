@@ -6,10 +6,16 @@ import ListCategorie from "../components/ListCategorie";
 import style from "../style/module/Movie.module.scss";
 import { connect } from "react-redux";
 import { allcategorie, selectedCategorie } from "../store/categorieSelector";
-import { addCategorie } from "../store/categorieAction";
+import { addCategorie, fetchAllCagtegorie } from "../store/categorieAction";
 import { AllMovie } from "../store/MovieSelectors";
 import { addMovie } from "../store/MovieActions";
-const Movie = ({ categorie, selectedCategorie, MovieList, fetchMovie }) => {
+const Movie = ({
+	categorie,
+	selectedCategorie,
+	MovieList,
+	fetchMovie,
+	fetchCategorie
+}) => {
 	const [LoaderValue, setLoader] = useState(true);
 	useEffect(() => {
 		fetch(
@@ -30,6 +36,7 @@ const Movie = ({ categorie, selectedCategorie, MovieList, fetchMovie }) => {
 				<ListCategorie
 					ListCategorie={categorie}
 					selectedCategorie={selectedCategorie}
+					fetchCategorie={fetchCategorie}
 				/>
 				<div className={style.listCards}>
 					{MovieList.map((item, index) => {
@@ -49,6 +56,8 @@ export const MovieStore = connect(
 		MovieList: AllMovie(state.categorie)
 	}),
 	(dispatch) => ({
+		fetchCategorie: (ListCategorie) =>
+			dispatch(fetchAllCagtegorie(ListCategorie)),
 		fetchMovie: (MovieList) => dispatch(addMovie(MovieList)),
 		selectedCategorie: (categorie) => dispatch(addCategorie(categorie))
 	})

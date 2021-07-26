@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import { HomeStore } from "./pages/Home";
 import { MovieStore } from "./pages/Movie";
 import { TvStore } from "./pages/Tv";
 import Contact from "./pages/Contact";
@@ -11,7 +11,6 @@ import DetailsMovie from "./pages/DetailsMovie";
 import DetailsTv from "./pages/DetailsTv";
 import store from "./store";
 import { Provider } from "react-redux";
-import { HomeStore } from "./pages/Home";
 const App = () => {
 	console.log(process.env.REACT_APP_KEY_USER_ID);
 	return (

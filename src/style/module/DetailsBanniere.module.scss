@@ -2,15 +2,20 @@
 	position: relative;
 	height: 50vh;
 	width: 100%;
-	background: url(../../movies/falcon.jpg);
-	background-size: cover;
+	background: rgba(0, 0, 0, 0.45);
 	&::after {
 		content: "";
 		position: absolute;
 		top: 0;
+		left: 0;
 		height: 100%;
 		width: 100%;
 		background: rgba(0, 0, 0, 0.45);
+	}
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
 	}
 	.leftImage {
 		position: absolute;
@@ -20,8 +25,7 @@
 		transform: translateY(-40%);
 		height: 120%;
 		width: 40vh;
-		background: url(../../movies/falcon.jpg);
-		background-size: cover;
+		background: rgba(0, 0, 0, 0.45);
 		@media screen and(max-width:600px) {
 			width: 90%;
 		}

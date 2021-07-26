@@ -1,6 +1,3 @@
-export const allNewsTv = ({ newsTv }) => {
-	return newsTv;
-};
-export const allNewsMovie = ({ newsMovie }) => {
-	return newsMovie;
-};
+export const allNewsTv = ({ newsTv }) => newsTv;
+export const allNewsMovie = ({ newsMovie }) => newsMovie;
+export const allNews = ({ news }) => news;

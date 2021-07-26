@@ -2,8 +2,6 @@ import style from "../style/module/Header.module.scss";
 import { NavLink, Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
-import { selectedCategorie } from "../store/categorieSelector";
 const Header = () => {
 	return (
 		<>

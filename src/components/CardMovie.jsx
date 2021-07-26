@@ -1,7 +1,6 @@
 import style from "../style/module/Card.module.scss";
 import { Link } from "react-router-dom";
 const CardMovie = ({ item }) => {
-	console.log(item);
 	return (
 		<>
 			<Link to={`/Movie/${item.id}`} className={style.link}>

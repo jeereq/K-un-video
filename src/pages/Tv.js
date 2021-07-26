@@ -5,11 +5,17 @@ import { useEffect, useState } from "react";
 import style from "../style/module/Tv.module.scss";
 import { connect } from "react-redux";
 import { allcategorie, selectedCategorie } from "../store/categorieSelector";
-import { addCategorie } from "../store/categorieAction";
+import { addCategorie, fetchAllCagtegorie } from "../store/categorieAction";
 import ListCategorie from "../components/ListCategorieTv";
 import { AllTv } from "../store/TvSelectors";
 import { addTv } from "../store/TvActions";
-const Tv = ({ categorie, selectedCategorie, SerieList, fetchTv }) => {
+const Tv = ({
+	categorie,
+	selectedCategorie,
+	SerieList,
+	fetchTv,
+	fetchCategorie
+}) => {
 	const [LoaderValue, setLoader] = useState(true);
 	useEffect(() => {
 		fetch(
@@ -30,6 +36,7 @@ const Tv = ({ categorie, selectedCategorie, SerieList, fetchTv }) => {
 				<ListCategorie
 					ListCategorie={categorie}
 					selectedCategorie={selectedCategorie}
+					fetchCategorie={fetchCategorie}
 				/>
 				<div className={style.listCards}>
 					{SerieList.map((item, index) => (
@@ -50,6 +57,8 @@ export const TvStore = connect(
 		SerieList: AllTv(state.categorie)
 	}),
 	(dispatch) => ({
+		fetchCategorie: (ListCategorie) =>
+			dispatch(fetchAllCagtegorie(ListCategorie)),
 		selectedCategorie: (categorie) => dispatch(addCategorie(categorie)),
 		fetchTv: (TvList) => dispatch(addTv(TvList))
 	})

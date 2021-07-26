@@ -1,19 +1,12 @@
 import style from "../style/module/Loader.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCrop } from "@fortawesome/free-solid-svg-icons";
-const Loader = ({ setLoader }) => {
+const Loader = () => {
 	return (
 		<>
 			<div className={style.Loader}>
-				<div
-					className={style.croix}
-					onClick={() => {
-						setLoader((state) => !state);
-					}}
-				>
-					<FontAwesomeIcon icon={faCrop} />
+				<div className={style.spinner}>
+					<div className={style.child}></div>
+					<div className={style.child}></div>
 				</div>
-				<div className={style.animation}></div>
 			</div>
 		</>
 	);

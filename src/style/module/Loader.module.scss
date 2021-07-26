@@ -12,29 +12,68 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 	width: 100%;
 	background-color: $backgroundColorTransparent;
 	transition: 1s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	.croix {
+		position: fixed;
+		top: 0;
+		right: 0;
 		padding: 10px;
-		float: right;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: white;
 	}
-	.animation {
-		height: 120%;
-		width: 70%;
-		background: linear-gradient(90deg, $defaultTextColor, $defaultColor);
-		animation-name: leftRight;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-direction: alternate-reverse;
+	.spinner {
+		height: 100px;
+		width: 100px;
+		border-radius: 50%;
+		position: relative;
+		//	background: linear-gradient(90deg, $defaultTextColor, $defaultColor);
+		.child {
+			box-sizing: border-box;
+			position: absolute;
+			height: 100px;
+			width: 100px;
+			border: 10px solid transparent;
+			border-top-color: $defaultColor;
+			border-radius: 50%;
+			animation: spinnerOne 1.2s linear infinite;
+			&:nth-child(2) {
+				border: 10px solid transparent;
+				border-bottom-color: $defaultColor;
+				animation: spinnerTwo 1.2s linear infinite;
+			}
+		}
 	}
 }
-@keyframes leftRight {
+
+@keyframes spinnerOne {
 	0% {
-		transform: translateX(-50%) rotate(35deg);
+		transform: rotate(0deg);
+		border-width: 10px;
+	}
+	50% {
+		transform: rotate(180deg);
+		border-width: 1px;
 	}
 	100% {
-		transform: translateX(150%) rotate(0deg);
+		transform: rotate(360deg);
+		border-width: 10px;
+	}
+}
+@keyframes spinnerTwo {
+	0% {
+		transform: rotate(0deg);
+		border-width: 1px;
+	}
+	50% {
+		transform: rotate(180deg);
+		border-width: 10px;
+	}
+	100% {
+		transform: rotate(360deg);
+		border-width: 1px;
 	}
 }
