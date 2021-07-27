@@ -12,9 +12,8 @@ const ListCategorie = ({
 			.then((res) => res.json())
 			.then((data) => {
 				fetchCategorie(data.genres);
-				console.log(data.genres);
 			});
-	}, []);
+	}, [fetchCategorie]);
 
 	return (
 		<>

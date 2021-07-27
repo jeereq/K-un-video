@@ -1,32 +1,131 @@
+$backgroundColor: #19181e;
+$defaultColor: #cfa55b;
+$backgroundColorTransparent: #19181e38;
+$defaultTextColor: rgba(255, 255, 255, 0.5);
+.DetailsTv,
 .DetailsMovie {
 	height: max-content;
 	width: 100%;
 	.container {
-		height: 500px;
-		width: calc(90%);
-		padding-left: 40vh;
-		margin: auto;
-		@media screen and(max-width:600px) {
-			padding-left: 0;
-			margin-top: 37.5vh;
-		}
-	}
-}
-.DetailsTv {
-	height: max-content;
-	width: 100%;
-	.container {
-		height: 500px;
+		min-height: 500px;
 		width: calc(90%);
 		padding-left: 40vh;
 		margin: auto;
 		.data {
 			height: 100%;
-			background: red;
+			.overview {
+				text-transform: lowercase;
+				color: aliceblue;
+				margin: 15px;
+				margin-top: 20px;
+				margin-left: 50px;
+				padding: 5px;
+				border-bottom: 3px solid $defaultColor;
+			}
+			.ListCategorie,
+			.companiesList,
+			.ListMovies {
+				display: flex;
+				justify-content: left;
+				flex-wrap: wrap;
+				width: 90%;
+				font-size: 0.8em;
+				border-bottom: 3px solid $defaultColor;
+				margin-left: 50px;
+				position: relative;
+				margin-top: 20px;
+				padding-top: 20px;
+				border-top: 2px solid $defaultColor;
+				&::after {
+					content: "genres";
+					color: $defaultColor;
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 5px;
+					border: 2px solid $defaultColor;
+					background: $backgroundColor;
+					transform: translate(0%, -50%);
+				}
+				.categorie {
+					padding: 5px 10px;
+					border: 1px solid $defaultColor;
+					margin-right: 5px;
+					margin-bottom: 10px;
+					color: aliceblue;
+				}
+				.MovieCard {
+					position: relative;
+					height: 22vw;
+					width: 22vw;
+					background: $defaultTextColor;
+					border: 1px solid $backgroundColor;
+					img {
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+						height: 100%;
+						width: 100%;
+						background: $backgroundColorTransparent;
+					}
+					&:hover::after {
+						background: transparent;
+					}
+				}
+				.link {
+					color: $backgroundColorTransparent;
+				}
+				.link:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+			.ListMovies {
+				width: 100%;
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+				&::after {
+					content: "similar movies";
+				}
+			}
+			.companiesList {
+				&::after {
+					content: "production companies";
+				}
+			}
 		}
 		@media screen and(max-width:600px) {
 			padding-left: 0;
 			margin-top: 37.5vh;
+			.data {
+				.ListCategorie,
+				.companiesList,
+				.ListMovies {
+					margin-left: 5px;
+				}
+				.ListMovies {
+					width: 100%;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+				}
+
+				.overview {
+					text-transform: lowercase;
+					color: aliceblue;
+					margin: 5px;
+					margin-top: 65px;
+					margin-left: 10px;
+					padding: 5px;
+					padding-top: 20px;
+				}
+			}
 		}
 	}
 }

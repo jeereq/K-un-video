@@ -4,3 +4,7 @@ export const selectedCategorie = ({ selectCategorie }) => {
 export const allcategorie = ({ categorie }) => {
 	return categorie;
 };
+
+export const allCategorieDetails = ({ categorieDetails }) => {
+	return categorieDetails;
+};

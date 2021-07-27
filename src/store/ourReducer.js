@@ -1,4 +1,5 @@
 const initialState = {
+	categorieDetails: [],
 	categorie: [
 		{ id: 1, name: "name of categorie" },
 		{ id: 2, name: "name of categorie" },
@@ -66,6 +67,11 @@ export const ourReducer = (state = initialState, action) => {
 				...state,
 				categorie: [{ id: 0, name: "all" }, ...action.payload]
 			};
+		case FETCH_DETAILS_CATEGORIE_ACTION:
+			return {
+				...state,
+				categorieDetails: action.payload
+			};
 		default:
 			return state;
 	}
@@ -80,3 +86,4 @@ export const ADD_NEWS_TV_ACTION = "ADD_NEWS_TV_ACTION";
 export const ADD_NEWS_MOVIE_ACTION = "ADD_NEWS_MOVIE_ACTION";
 export const ADD_NEWS_ACTION = "ADD_NEWS_ACTION";
 export const FETCH_NEW_CATEGORIE_ACTION = "FETCH_NEW_CATEGORIE_ACTION";
+export const FETCH_DETAILS_CATEGORIE_ACTION = "FETCH_DETAILS_CATEGORIE_ACTION";
