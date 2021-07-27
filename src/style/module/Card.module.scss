@@ -19,7 +19,8 @@ $defaultTextColor: rgba(255, 255, 255, 0.201);
 	width: 200px;
 	margin: 0 1px;
 	overflow: hidden;
-	background: $defaultTextColor;
+	background: url(../../movies/bg.gif);
+	background-size: cover;
 	&::after {
 		content: "";
 		position: absolute;
@@ -71,7 +72,8 @@ $defaultTextColor: rgba(255, 255, 255, 0.201);
 	width: 200px;
 	margin: 0 1px;
 	overflow: hidden;
-	background: $defaultTextColor;
+	background: url(../../movies/bg.gif);
+	background-size: cover;
 	&::after {
 		content: "";
 		position: absolute;

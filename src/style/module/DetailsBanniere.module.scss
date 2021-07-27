@@ -5,7 +5,9 @@ $defaultColor: #cfa55b;
 	position: relative;
 	height: 50vh;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.45);
+	background: url(../../movies/bg.gif);
+	background-size: cover;
+	background-position: center;
 	&::after {
 		content: "";
 		position: absolute;
@@ -30,7 +32,9 @@ $defaultColor: #cfa55b;
 		height: 120%;
 		width: 40vh;
 		border-radius: 20px;
-		background: rgba(0, 0, 0, 0.45);
+		background: url(../../movies/bg.gif);
+		background-size: cover;
+		background-position: center;
 		@media screen and(max-width:600px) {
 			width: 90%;
 		}

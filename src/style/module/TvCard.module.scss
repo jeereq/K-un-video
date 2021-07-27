@@ -15,7 +15,8 @@ $defaultTextColor: rgba(255, 255, 255, 0.5);
 	position: relative;
 	height: 22vw;
 	width: 22vw;
-	background: $defaultTextColor;
+	background: url(../../movies/bg.gif);
+	background-size: cover;
 	border: 1px solid $backgroundColor;
 	img {
 		height: 100%;
